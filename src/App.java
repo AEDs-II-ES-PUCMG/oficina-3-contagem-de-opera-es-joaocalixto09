@@ -105,6 +105,44 @@ public class App {
         
     }
     public static void main(String[] args) {
-        
+        // Teste Algoritmo 1
+        System.out.println("\n--- ALGORITMO 1 (Teste Grande) ---");
+        for (int n : tamanhosTesteGrande) {
+            int[] v = gerarVetor(n);
+            long inicio = System.nanoTime();
+            codigo1(v);
+            long fim = System.nanoTime();
+            System.out.printf("N: %d | Ops: %d | Tempo: %.4f ms\n", n, operacoes, (fim - inicio) * nanoToMilli);
+        }
+
+        // Teste Algoritmo 2
+        System.out.println("\n--- ALGORITMO 2 (Teste Grande) ---");
+        for (int n : tamanhosTesteGrande) {
+            int[] v = gerarVetor(n);
+            long inicio = System.nanoTime();
+            codigo2(v);
+            long fim = System.nanoTime();
+            System.out.printf("N: %d | Ops: %d | Tempo: %.4f ms\n", n, operacoes, (fim - inicio) * nanoToMilli);
+        }
+
+        // Teste Algoritmo 3
+        System.out.println("\n--- ALGORITMO 3 (Teste Médio) ---");
+        for (int n : tamanhosTesteMedio) {
+            int[] v = gerarVetor(n);
+            long inicio = System.nanoTime();
+            codigo3(v);
+            long fim = System.nanoTime();
+            System.out.printf("N: %d | Ops: %d | Tempo: %.4f ms\n", n, operacoes, (fim - inicio) * nanoToMilli);
+        }
+
+        // Teste Algoritmo 4
+        System.out.println("\n--- ALGORITMO 4 (Teste Pequeno) ---");
+        for (int n : tamanhosTestePequeno) {
+            operacoes = 0; // Zerar antes da primeira chamada recursiva
+            long inicio = System.nanoTime();
+            codigo4(n);
+            long fim = System.nanoTime();
+            System.out.printf("N: %d | Ops: %d | Tempo: %.4f ms\n", n, operacoes, (fim - inicio) * nanoToMilli);
+        }
     }
 }
